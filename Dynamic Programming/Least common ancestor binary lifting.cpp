@@ -12,6 +12,13 @@ void dfs(int v,int p)
 {
     tin[v] = timer++;
     up[v][0] = p;
+    for (int i=1;i<h;i++)
+    {
+        if(up[v][i] != -1)
+        {
+            up[v][i-1] = up[ up[v][i-1] ][i-1];
+        }
+    }
 
 }
 

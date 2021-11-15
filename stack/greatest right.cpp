@@ -22,3 +22,26 @@ vector<int> nearest_in_right(vector<int> a)
   }
   return l;
 }
+
+
+vector<int> ngr(vector<int> a,int n)
+{
+  vector<int> res(n,n);
+  stack<int> s;
+  int i = 0;
+  while(i < n)
+  {
+    if(s.empty() || a[s.top()] >= a[i]) s.push(i);
+    else 
+    {
+      int t = s.top();
+      s.pop();
+      res[t] = i;
+    }
+  }
+  return res;
+
+
+
+  for (int i=0;i<n;i++)
+}
